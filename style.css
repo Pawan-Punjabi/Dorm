@@ -1,0 +1,282 @@
+/* Part 1: Tokens and Global Reset */
+
+:root {
+  /* Stitch Design System - "The Digital Zine" Authority Tokens */
+  --color-primary: #f3ffca;
+  --color-primary-container: #cafd00;
+  --color-primary-accent: #CCFF00; /* Signature Accent */
+  
+  --color-secondary: #759aff;
+  --color-secondary-container: #0054d6;
+  
+  --color-tertiary: #ff6b9b;
+  --color-tertiary-container: #ff067f;
+  
+  /* Surfaces */
+  --surface-lowest: #000000;
+  --surface-low: #131313;
+  --surface: #0e0e0e;
+  --surface-container: #1a1a1a;
+  --surface-container-high: #20201f;
+  --surface-container-highest: #262626;
+  --surface-bright: #2c2c2c;
+  
+  /* Text & Icons */
+  --color-on-surface: #ffffff;
+  --color-on-surface-variant: #adaaaa;
+  
+  /* Utility */
+  --color-outline: #767575;
+  --color-outline-variant: #484847;
+  --color-error: #ff7351;
+  --color-error-container: #b92902;
+  
+  /* Typography */
+  --font-display: 'Epilogue', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-label: 'Space Grotesk', monospace;
+  
+  /* Shadows representing "hard" offsets */
+  --shadow-offset: 3px 3px 0px 0px #000000;
+  --shadow-offset-hover: 6px 6px 0px 0px #000000;
+  --shadow-accent: 4px 4px 0px 0px var(--color-primary-accent);
+  --shadow-accent-hover: 8px 8px 0px 0px var(--color-primary-accent);
+}
+
+/* Global Reset (The "No-Fluff" & "0px Radius" Rule) */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border-radius: 0 !important; /* Sharp corners are non-negotiable */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--surface);
+  color: var(--color-on-surface);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  
+  /* Subtle noise texture overlay representing "paper / raw print" */
+  background-image: 
+    radial-gradient(var(--surface-container) 1px, transparent 1px),
+    url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.05"/%3E%3C/svg%3E');
+  background-size: 20px 20px, auto;
+}
+
+/* Base Typography Classes */
+.display-lg {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(3rem, 10vw, 6rem);
+  letter-spacing: -0.04em; /* Tight letter-spacing per strategy */
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.headline-md {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 2.5rem;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.body-text {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.125rem;
+}
+
+.label-meta {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ========================================================================= */
+/* Part 2: Structural Surfaces & The "No-Line" Paradigm                      */
+/* ========================================================================= */
+
+.surface-root {
+  background-color: var(--surface);
+  color: var(--color-on-surface);
+}
+
+.surface-container-low {
+  background-color: var(--surface-low);
+}
+
+.surface-container {
+  background-color: var(--surface-container);
+}
+
+/* Base Layout Utilities */
+.zine-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Masonry Layout */
+.masonry-grid {
+  column-count: 1;
+  column-gap: 1.5rem;
+}
+@media (min-width: 768px) { .masonry-grid { column-count: 2; } }
+@media (min-width: 1280px) { .masonry-grid { column-count: 3; } }
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+}
+
+/* Decorative Sticker Utilities */
+.sticker-rotate-1 { transform: rotate(-2deg); }
+.sticker-rotate-2 { transform: rotate(3deg); }
+.sticker-rotate-3 { transform: rotate(-1deg); }
+
+/* ========================================================================= */
+/* Part 3: Core Interactive Components (Buttons & Inputs)                    */
+/* ========================================================================= */
+
+.btn {
+  font-family: var(--font-label);
+  font-size: 0.875rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  border: 2px solid var(--surface-lowest);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.1s cubic-bezier(0.19, 1, 0.22, 1);
+  background: transparent;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--color-primary-accent);
+  color: var(--surface-lowest);
+  box-shadow: var(--shadow-offset);
+}
+
+.btn-primary:hover {
+  box-shadow: var(--shadow-offset-hover);
+  transform: translate(-3px, -3px);
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary-container);
+  color: white;
+  border-color: white;
+}
+
+.btn-secondary:hover {
+  box-shadow: var(--shadow-offset);
+  transform: translate(-3px, -3px);
+}
+
+/* Inputs */
+.input-field {
+  background-color: var(--surface-lowest);
+  color: var(--color-on-surface);
+  border: 2px solid var(--color-outline);
+  padding: 1rem;
+  font-family: var(--font-body);
+  transition: all 0.1s linear;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--color-tertiary);
+  box-shadow: 3px 3px 0px 0px var(--color-tertiary);
+}
+
+/* ========================================================================= */
+/* Part 4: Advanced Components (Cards, Badges)                               */
+/* ========================================================================= */
+
+.zine-card {
+  background-color: var(--surface-container-high);
+  border: 2px solid var(--color-outline);
+  padding: 2rem;
+  box-shadow: var(--shadow-offset);
+  transition: all 0.1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.zine-card:hover {
+  box-shadow: var(--shadow-offset-hover);
+  transform: translate(-3px, -3px);
+  border-color: var(--color-on-surface);
+}
+
+.zine-badge {
+  font-family: var(--font-label);
+  font-weight: 900;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  padding: 0.25rem 0.75rem;
+  border: 2px solid var(--surface-lowest);
+  display: inline-block;
+}
+
+.badge-vibrant { background: var(--color-primary-accent); color: black; }
+.badge-error { background: var(--color-error); color: white; }
+.badge-info { background: var(--color-secondary); color: white; }
+
+/* ========================================================================= */
+/* Part 5: "Stickers" & Asymmetry Utilities                                  */
+/* ========================================================================= */
+
+.sticker {
+  position: relative;
+  z-index: 10;
+}
+
+.rotate-1 { transform: rotate(1.5deg); }
+.rotate-2 { transform: rotate(-2deg); }
+.rotate-3 { transform: rotate(3deg); }
+
+.overlap {
+  margin-top: -2rem;
+  margin-left: 2rem;
+}
+
+/* Navigation Overrides */
+.nav-item {
+  transition: all 0.1s linear;
+  border-left: 4px solid transparent;
+}
+
+.nav-item:hover, .nav-item.active {
+  background: var(--color-primary-accent);
+  color: black !important;
+  border-left-color: black;
+  padding-left: 1.5rem;
+}
+
+/* Scrollbar Style */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface-lowest);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-outline-variant);
+  border: 3px solid var(--surface-lowest);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-accent);
+}

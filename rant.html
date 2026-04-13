@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800;900&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-dim": "#beee00",
+            "on-secondary": "#001c53",
+            "on-surface": "#ffffff",
+            "error-container": "#b92902",
+            "on-tertiary": "#47001f",
+            "on-surface-variant": "#adaaaa",
+            "surface-container-highest": "#262626",
+            "surface-dim": "#0e0e0e",
+            "error": "#ff7351",
+            "tertiary-container": "#ff067f",
+            "outline-variant": "#484847",
+            "secondary": "#759aff",
+            "secondary-fixed": "#c3d0ff",
+            "surface-variant": "#262626",
+            "surface": "#0e0e0e",
+            "inverse-surface": "#fcf9f8",
+            "primary-fixed-dim": "#beee00",
+            "inverse-primary": "#516700",
+            "tertiary-fixed": "#ff8eae",
+            "surface-tint": "#f3ffca",
+            "on-primary-fixed": "#3a4a00",
+            "on-tertiary-fixed": "#380017",
+            "tertiary-dim": "#e30071",
+            "on-secondary-fixed": "#002e7d",
+            "on-primary-container": "#4a5e00",
+            "tertiary-fixed-dim": "#ff75a0",
+            "surface-container-low": "#131313",
+            "error-dim": "#d53d18",
+            "on-background": "#ffffff",
+            "secondary-dim": "#156aff",
+            "on-tertiary-fixed-variant": "#760037",
+            "secondary-fixed-dim": "#afc2ff",
+            "surface-container": "#1a1a1a",
+            "tertiary": "#ff6b9b",
+            "surface-container-high": "#20201f",
+            "outline": "#767575",
+            "on-tertiary-container": "#000000",
+            "on-secondary-fixed-variant": "#0048b9",
+            "inverse-on-surface": "#565555",
+            "on-error-container": "#ffd2c8",
+            "secondary-container": "#0054d6",
+            "primary-fixed": "#cafd00",
+            "on-primary-fixed-variant": "#526900",
+            "surface-container-lowest": "#000000",
+            "on-error": "#450900",
+            "primary-container": "#cafd00",
+            "on-secondary-container": "#f8f7ff",
+            "primary": "#f3ffca",
+            "surface-bright": "#2c2c2c",
+            "background": "#0e0e0e",
+            "on-primary": "#516700"
+          },
+          fontFamily: {
+            "headline": ["Epilogue"],
+            "body": ["Plus Jakarta Sans"],
+            "label": ["Space Grotesk"]
+          },
+          borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <link href="style.css" rel="stylesheet" />
+</head>
+
+<body
+  class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+  <!-- TopAppBar -->
+  <header
+    class="flex justify-between items-center w-full px-6 py-4 z-50 fixed top-0 bg-[#0e0e0e] border-b-2 border-[#CCFF00] shadow-[4px_4px_0px_0px_rgba(204,255,0,1)]">
+    <div class="flex items-center gap-4">
+      <span
+        class="text-3xl font-black text-[#CCFF00] italic font-bold font-display uppercase tracking-tight">Dorm</span>
+    </div>
+    <div class="flex items-center gap-6">
+      <div class="hidden md:flex items-center bg-surface-lowest border-2 border-outline px-3 py-1">
+        <span class="material-symbols-outlined text-primary-container text-sm mr-2">search</span>
+        <input class="bg-transparent border-none focus:ring-0 text-xs font-label uppercase text-on-surface-variant w-48"
+          placeholder="SEARCH Speak Up..." type="text" />
+      </div>
+      <div class="flex gap-4">
+        <span class="material-symbols-outlined text-white hover:text-primary-accent cursor-pointer">notifications</span>
+        <span
+          class="material-symbols-outlined text-white hover:text-primary-accent cursor-pointer">account_circle</span>
+      </div>
+    </div>
+  </header>
+  <!-- SideNavBar (Desktop) -->
+  <aside
+    class="hidden lg:flex flex-col h-screen fixed left-0 top-0 pt-20 pb-10 w-64 bg-[#131313] border-r-4 border-black z-40">
+    <nav class="flex flex-col gap-1 px-2">
+      <a class="nav-item text-white px-4 py-3 flex items-center gap-3" href="index.html">
+        <span class="material-symbols-outlined">home</span>
+        <span class="font-display font-bold text-lg">Speak Up</span>
+      </a>
+      <a class="nav-item active bg-[#CCFF00] text-black font-black italic px-4 py-3 border-2 border-black flex items-center gap-3"
+        href="rant.html">
+        <span class="material-symbols-outlined">campaign</span>
+        <span class="font-display font-bold text-lg">Rant & Vent</span>
+      </a>
+      <a class="nav-item text-white px-4 py-3 flex items-center gap-3" href="stories.html">
+        <span class="material-symbols-outlined">auto_stories</span>
+        <span class="font-display font-bold text-lg">Real Talk Stories</span>
+      </a>
+      <a class="nav-item text-white px-4 py-3 flex items-center gap-3" href="news.html">
+        <span class="material-symbols-outlined">newspaper</span>
+        <span class="font-display font-bold text-lg">Campus News</span>
+      </a>
+    </nav>
+    <div class="mt-auto px-4">
+      <button class="btn btn-primary w-full text-center trigger-speakout hover:bg-white hover:text-black">
+        SPEAK OUT
+      </button>
+    </div>
+  </aside>
+  <!-- Main Content Canvas -->
+  <main class="lg:ml-64 pt-28 pb-24 px-4 md:px-8">
+    <div class="max-w-4xl mx-auto">
+      <!-- Header Section -->
+      <div class="mb-12 relative">
+        <span
+          class="absolute -top-6 -left-4 bg-tertiary text-on-tertiary font-label px-3 py-1 font-bold text-xs -rotate-3 border-2 border-black z-10">LOUD
+          &amp; PROUD</span>
+        <h1
+          class="text-6xl md:text-8xl font-headline font-black uppercase italic leading-[0.9] text-primary-fixed mb-4 shout-text">
+          Rant &amp; Vent Space
+        </h1>
+        <p class="font-label text-xl text-white font-bold uppercase tracking-tight">
+          Let it out. <span class="text-tertiary">Anonymous by default.</span>
+        </p>
+      </div>
+      <!-- Filter Bar -->
+      <div class="flex flex-wrap gap-3 mb-12 items-center">
+        <span class="font-label text-xs uppercase text-on-surface-variant mr-2">Filter Feed:</span>
+        <button
+          class="px-4 py-1 border-2 border-[#CCFF00] bg-transparent text-[#CCFF00] font-label font-bold uppercase text-sm hover:bg-[#CCFF00] hover:text-black transition-colors">Admin</button>
+        <button
+          class="px-4 py-1 border-2 border-white bg-white text-black font-label font-bold uppercase text-sm">Professors</button>
+        <button
+          class="px-4 py-1 border-2 border-white bg-transparent text-white font-label font-bold uppercase text-sm hover:bg-white hover:text-black transition-colors">Hostel
+          Life</button>
+        <button
+          class="px-4 py-1 border-2 border-white bg-transparent text-white font-label font-bold uppercase text-sm hover:bg-white hover:text-black transition-colors">Peer
+          Pressure</button>
+      </div>
+      <!-- Rant Feed -->
+      <div class="flex flex-col gap-8">
+        <!-- Post 1 -->
+        <article class="bg-surface-container-high border-2 border-black p-6 shadow-[6px_6px_0px_0px_#CCFF00] relative">
+          <div class="flex justify-between items-start mb-4">
+            <div class="flex gap-2">
+              <span
+                class="bg-secondary-container text-white px-2 py-0.5 font-label text-[10px] uppercase border border-black">Professors</span>
+              <span class="text-on-surface-variant font-label text-[10px] uppercase pt-1">2 hours ago • Anonymous
+                #492</span>
+            </div>
+            <span class="material-symbols-outlined text-white cursor-pointer hover:text-tertiary">more_horiz</span>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-headline font-extrabold italic uppercase mb-4 leading-tight shout-text">
+            "Professor Miller literally told us to 'google it' when we asked about the lab requirements. Why am I paying
+            tuition for a search engine referral??"
+          </h2>
+          <div class="flex items-center gap-6 mt-6">
+            <button
+              class="flex items-center gap-2 bg-surface-container-lowest border-2 border-black px-4 py-2 hover:bg-primary-container hover:text-black group transition-all">
+              <span class="material-symbols-outlined group-hover:fill-current">back_hand</span>
+              <span class="font-label font-bold uppercase text-xs">Vibe Check</span>
+            </button>
+            <div class="flex items-center gap-2 text-tertiary">
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+              <span class="font-label font-bold uppercase text-sm">42 Me Too</span>
+            </div>
+          </div>
+        </article>
+        <!-- Post 2 -->
+        <article
+          class="bg-surface-container-high border-2 border-black p-6 shadow-[6px_6px_0px_0px_#ff6b9b] relative translate-x-1">
+          <div
+            class="absolute -right-4 -top-4 bg-tertiary text-black font-label font-black px-4 py-1 rotate-6 border-2 border-black text-xs uppercase z-10">
+            Trending Heat</div>
+          <div class="flex justify-between items-start mb-4">
+            <div class="flex gap-2">
+              <span
+                class="bg-error-container text-white px-2 py-0.5 font-label text-[10px] uppercase border border-black">Admin</span>
+              <span class="text-on-surface-variant font-label text-[10px] uppercase pt-1">5 hours ago • Anonymous
+                #118</span>
+            </div>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-headline font-extrabold italic uppercase mb-4 leading-tight shout-text">
+            The hostel WiFi has been out for 3 days. Admin says it's "scheduled maintenance." Scheduled for the middle
+            of finals week? REALLY?
+          </h2>
+          <div class="flex items-center gap-6 mt-6">
+            <button
+              class="flex items-center gap-2 bg-surface-container-lowest border-2 border-black px-4 py-2 hover:bg-tertiary hover:text-black group transition-all">
+              <span class="material-symbols-outlined group-hover:fill-current">back_hand</span>
+              <span class="font-label font-bold uppercase text-xs">Vibe Check</span>
+            </button>
+            <div class="flex items-center gap-2 text-[#CCFF00]">
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+              <span class="font-label font-bold uppercase text-sm">158 Me Too</span>
+            </div>
+          </div>
+        </article>
+        <!-- Post 3 -->
+        <article class="bg-surface-container-high border-2 border-black p-6 shadow-[6px_6px_0px_0px_#0054d6] relative">
+          <div class="flex justify-between items-start mb-4">
+            <div class="flex gap-2">
+              <span
+                class="bg-surface-container-highest text-white px-2 py-0.5 font-label text-[10px] uppercase border border-black">Peer
+                Pressure</span>
+              <span class="text-on-surface-variant font-label text-[10px] uppercase pt-1">8 hours ago • Anonymous
+                #224</span>
+            </div>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-headline font-extrabold italic uppercase mb-4 leading-tight shout-text">
+            Anyone else tired of the hustle culture in the engineering block? If I hear "What's your internship plan?"
+            one more time I'm jumping into Speak Up pond.
+          </h2>
+          <div class="flex items-center gap-6 mt-6">
+            <button
+              class="flex items-center gap-2 bg-surface-container-lowest border-2 border-black px-4 py-2 hover:bg-secondary-container hover:text-white group transition-all">
+              <span class="material-symbols-outlined group-hover:fill-current">back_hand</span>
+              <span class="font-label font-bold uppercase text-xs">Vibe Check</span>
+            </button>
+            <div class="flex items-center gap-2 text-white/50">
+              <span class="material-symbols-outlined">group</span>
+              <span class="font-label font-bold uppercase text-sm">12 Me Too</span>
+            </div>
+          </div>
+        </article>
+      </div>
+      <!-- Load More CTA -->
+      <div class="mt-16 flex justify-center">
+        <button
+          class="bg-transparent text-white font-headline font-black uppercase text-xl py-4 px-12 border-4 border-[#CCFF00] hover:bg-[#CCFF00] hover:text-black transition-all shadow-[8px_8px_0px_0px_rgba(204,255,0,0.3)]">
+          Load More Chaos
+        </button>
+      </div>
+    </div>
+  </main>
+  <!-- Rant Now CTA FAB -->
+  <button
+    class="fixed bottom-24 right-6 md:bottom-12 md:right-12 z-50 bg-tertiary-container text-white px-6 py-6 border-4 border-black shadow-[6px_6px_0px_0px_#000000] active:translate-x-1 active:translate-y-1 active:shadow-none flex items-center gap-3">
+    <span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">add_comment</span>
+    <span class="font-headline font-black uppercase text-xl tracking-tighter">Rant Now</span>
+  </button>
+  <!-- BottomNavBar -->
+  <nav
+    class="lg:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-4 pt-2 bg-[#0e0e0e] border-t-4 border-black z-50 shadow-[0_-4px_0px_0px_rgba(204,255,0,0.5)]">
+    <a class="flex flex-col items-center justify-center text-white p-2" href="index.html">
+      <span class="material-symbols-outlined">grid_view</span>
+      <span class="font-label text-[10px] uppercase font-bold">Home</span>
+    </a>
+    <a class="flex flex-col items-center justify-center bg-[#CCFF00] text-black rounded-none p-2 border-2 border-black -translate-y-2"
+      href="rant.html">
+      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">campaign</span>
+      <span class="font-label text-[10px] uppercase font-bold">Post</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-white p-2" href="#">
+      <span class="material-symbols-outlined">stars</span>
+      <span class="font-label text-[10px] uppercase font-bold">Wins</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-white p-2" href="#">
+      <span class="material-symbols-outlined">person</span>
+      <span class="font-label text-[10px] uppercase font-bold">Profile</span>
+    </a>
+  </nav>
+  <!-- Footer -->
+  <footer
+    class="lg:ml-64 bg-[#000000] border-t-2 border-[#CCFF00] mt-auto w-full py-8 px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+    <div class="text-[#CCFF00] font-bold font-headline uppercase">© Dorm. The Digital Zine.</div>
+    <div class="flex gap-6">
+      <a class="font-label text-xs uppercase text-gray-500 hover:text-white transition-colors" href="#">Guidelines</a>
+      <a class="font-label text-xs uppercase text-gray-500 hover:text-white transition-colors" href="#">Privacy</a>
+      <a class="font-label text-xs uppercase text-gray-500 hover:text-white transition-colors" href="#">Community
+        Rules</a>
+    </div>
+  </footer>
+  
+  <!-- Speak Out Modal -->
+  <div id="speakout-modal" class="fixed inset-0 z-[200] hidden flex items-center justify-center px-4 transition-opacity duration-200 opacity-0 backdrop-blur-md bg-black/60">
+    <div class="bg-[#131313] border-4 border-black w-full max-w-2xl shadow-[12px_12px_0px_0px_#000000] p-6 relative flex flex-col gap-6">
+      
+      <!-- Close Button -->
+      <button id="close-modal" class="absolute -top-4 -right-4 bg-error text-white font-black w-10 h-10 border-2 border-black flex items-center justify-center hover:scale-110 active:scale-95 transition-all text-xl sticker-rotate-2">X</button>
+      
+      <!-- Headline & Type Selector -->
+      <div class="flex flex-col gap-4 border-b-4 border-black pb-4">
+        <h2 class="font-headline font-black text-3xl md:text-3xl uppercase tracking-tighter text-[#CCFF00]">What's on your mind?</h2>
+        <div class="flex flex-wrap gap-2">
+          <button data-type="rant" class="type-btn font-label text-xs uppercase font-bold py-2 px-4 border-2 border-black bg-[#CCFF00] text-black">Rant & Vent</button>
+          <button data-type="news" class="type-btn font-label text-xs uppercase font-bold py-2 px-4 border-2 border-white bg-transparent text-white hover:bg-white hover:text-black transition-colors">Campus News</button>
+          <button data-type="win" class="type-btn font-label text-xs uppercase font-bold py-2 px-4 border-2 border-white bg-transparent text-white hover:bg-white hover:text-black transition-colors">Small Win</button>
+          <button data-type="poll" class="type-btn font-label text-xs uppercase font-bold py-2 px-4 border-2 border-white bg-transparent text-white hover:bg-white hover:text-black transition-colors">Poll</button>
+        </div>
+      </div>
+
+      <!-- Main Input -->
+      <div class="flex flex-col gap-4">
+        <input type="text" placeholder="Title/Topic..." class="w-full bg-transparent border-none border-b-4 border-outline focus:border-[#CCFF00] focus:ring-0 text-white font-headline font-bold text-2xl placeholder-outline outline-none py-2" />
+        <textarea rows="4" placeholder="Write your post here... Tell them how it really is." class="w-full bg-white text-black p-4 border-2 border-outline focus:border-[#CCFF00] focus:ring-0 font-body resize-none outline-none"></textarea>
+      </div>
+
+      <!-- Tag Selector (For Rants) -->
+      <div id="tag-selector-container" class="flex flex-col gap-2">
+        <span class="font-label text-xs uppercase font-bold text-[#CCFF00]">Tag your Rant:</span>
+        <div class="flex flex-wrap gap-2" id="tag-selector-options">
+          <button data-tag="Admin" class="tag-opt-btn px-4 py-1 border-2 border-white bg-white text-black font-label font-bold uppercase text-xs hover:bg-[#CCFF00] hover:text-black hover:border-black transition-colors">Admin</button>
+          <button data-tag="Professors" class="tag-opt-btn px-4 py-1 border-2 border-white bg-transparent text-white font-label font-bold uppercase text-xs hover:bg-white hover:text-black transition-colors">Professors</button>
+          <button data-tag="Hostel Life" class="tag-opt-btn px-4 py-1 border-2 border-white bg-transparent text-white font-label font-bold uppercase text-xs hover:bg-white hover:text-black transition-colors">Hostel Life</button>
+          <button data-tag="Peer Pressure" class="tag-opt-btn px-4 py-1 border-2 border-white bg-transparent text-white font-label font-bold uppercase text-xs hover:bg-white hover:text-black transition-colors">Peer Pressure</button>
+        </div>
+      </div>
+
+      <!-- Poll Container (Hidden by default) -->
+      <div id="poll-container" class="hidden flex-col gap-3 p-4 bg-surface-container border-2 border-outline relative">
+        <div class="absolute -top-3 -left-3 bg-[#CCFF00] text-black font-label font-bold text-[10px] px-2 py-0.5 border-2 border-black uppercase sticker-rotate-1">POLL BUILDER</div>
+        <div id="poll-options" class="flex flex-col gap-2 mt-2">
+          <input type="text" placeholder="Option A..." class="w-full bg-white text-black p-3 border-2 border-outline focus:border-[#CCFF00] focus:ring-0 font-label outline-none" />
+          <input type="text" placeholder="Option B..." class="w-full bg-white text-black p-3 border-2 border-outline focus:border-[#CCFF00] focus:ring-0 font-label outline-none" />
+        </div>
+        <button id="add-option-btn" class="font-label text-xs uppercase font-bold flex items-center justify-center py-3 border-2 border-dashed border-outline text-outline hover:text-white hover:border-white transition-colors gap-2 mt-2">
+          <span class="material-symbols-outlined text-sm">add</span> Add Option
+        </button>
+      </div>
+
+      <!-- Action Footer -->
+      <div class="flex justify-end gap-4 mt-2">
+        <button onclick="document.getElementById('close-modal').click()" class="font-label text-xs uppercase font-bold bg-transparent border-2 border-white text-white px-2 md:px-6 py-3 hover:bg-white hover:text-black transition-colors">Cancel</button>
+        <button class="font-label text-xs uppercase font-bold bg-[#CCFF00] border-2 border-black text-black px-4 md:px-8 py-3 shadow-[4px_4px_0px_0px_#000000] hover:translate-x-1 hover:translate-y-1 hover:shadow-[2px_2px_0px_0px_#000000] transition-all">POST RECORD</button>
+      </div>
+    </div>
+  </div>
+  <script src="modal.js"></script>
+</body>
+
+</html>

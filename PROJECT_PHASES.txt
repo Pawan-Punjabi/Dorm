@@ -1,0 +1,42 @@
+# Dorm Project - 7-Part Implementation Plan
+
+Based on the `DESIGN.md` strategy ("The Digital Zine", Neo-Brutalist), here is the 7-part breakdown for building the website. You should work on exactly 1 part at a time. Each part contains all the working components necessary for that specific phase.
+
+---
+
+## Part 1: Project Setup & Core Design Tokens
+*   **Initialization:** Set up the project framework (e.g., HTML/JS/CSS or Vite/React).
+*   **Typography:** Import and apply global font families (`Epilogue`, `Plus Jakarta Sans`, `Space Grotesk`).
+*   **CSS Variables:** Define all colors as CSS variables based on the palette (e.g., `--color-primary`, `--surface-container-high`).
+*   **Global Layout:** Implement the global reset, ensuring `0px` border-radius by default entirely. Apply a subtle noise texture overlay to the `background` and `surface` tiers.
+
+## Part 2: Foundational Elements & Structural Styles
+*   **Base Styling:** Apply the body and headline typography classes (tight letter-spacing for headlines, highly legible body fonts).
+*   **Containers & Surfaces:** Build CSS utility classes for the base layer (`#0e0e0e`) and secondary sections (`surface-container-low` vs. `surface-container`).
+*   **The "No-Line" Paradigm:** Ensure layouts use background tonal shifts instead of border dividers for internal grouping.
+
+## Part 3: Core Interactive Components (Buttons & Inputs)
+*   **Primary Button:** Build the primary interaction button (`#cafd00` bg, `0px` border-radius, hard `2px` black border, `3px` solid offset shadow).
+*   **Secondary/Tertiary Buttons:** Build variations (`#0054d6` bg with white text; transparent bg with accent borders).
+*   **Text Inputs:** Build form fields utilizing the `surface-container-lowest` sunken background, hard `2px` outlines.
+*   **Input States:** Add focus states for inputs featuring the tertiary accent (`#ff6b9b`) and a `2px` ghost shadow offset. Helper text components in `Space Grotesk`.
+
+## Part 4: Advanced Components (Cards & Lists)
+*   **Interactive Cards:** Build standard card containers with a `2px` stroke border. Make them interactive by implementing a hover state that lifts them (offset shadow increases from `3px` to `6px`).
+*   **List Views:** Construct list components adhering to the "No-Divider" rule (using `1.4rem` vertical gaps or alternating background shades).
+*   **Badges:** Implement the "Small Win" badge component (high-contrast background, thick border).
+
+## Part 5: "Stickers" & The Hand-Placed Aesthetic
+*   **Sticker Utilities:** Introduce CSS classes that apply random `{2-3}` degree rotations to components and badges.
+*   **Layering Layouts:** Construct overlay utilities that allow components to explicitly overlap the edge of primary cards or break the rigid grid.
+*   **Asymmetric Components:** Add intentional asymmetry rules to generic wrappers, allowing content to sit off-center creatively.
+
+## Part 6: Page Assembly (The Zine Experience)
+*   **Navigation & Header:** Assemble the top header and footer layouts, leveraging heavy typography to maintain the Zine weight.
+*   **Main Dashboard/Layout:** Assemble the main grid by stacking "Cards" containing "Lists" and "Interactive Components".
+*   **Sticker Application:** Scatter badges ("Small Wins") overlapping across the page for the completed aesthetic.
+
+## Part 7: Final Polish, Animations & QA
+*   **Micro-Animations:** Ensure card lifts are crisp (no ease-out, just mechanical transitions if applicable).
+*   **Responsive Refinements:** Adjust standard grid widths for mobile flow while maintaining the hard, broken layout.
+*   **QA Alignment:** Verify the rejection of all gradients, blurs, soft-shadows, and that standard icons have been replaced with thick-stroke (`2px+`) elements.

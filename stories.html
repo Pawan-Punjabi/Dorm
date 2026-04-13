@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,700;0,900;1,900&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-dim": "#beee00",
+            "on-secondary": "#001c53",
+            "on-surface": "#ffffff",
+            "error-container": "#b92902",
+            "on-tertiary": "#47001f",
+            "on-surface-variant": "#adaaaa",
+            "surface-container-highest": "#262626",
+            "surface-dim": "#0e0e0e",
+            "error": "#ff7351",
+            "tertiary-container": "#ff067f",
+            "outline-variant": "#484847",
+            "secondary": "#759aff",
+            "secondary-fixed": "#c3d0ff",
+            "surface-variant": "#262626",
+            "surface": "#0e0e0e",
+            "inverse-surface": "#fcf9f8",
+            "primary-fixed-dim": "#beee00",
+            "inverse-primary": "#516700",
+            "tertiary-fixed": "#ff8eae",
+            "surface-tint": "#f3ffca",
+            "on-primary-fixed": "#3a4a00",
+            "on-tertiary-fixed": "#380017",
+            "tertiary-dim": "#e30071",
+            "on-secondary-fixed": "#002e7d",
+            "on-primary-container": "#4a5e00",
+            "tertiary-fixed-dim": "#ff75a0",
+            "surface-container-low": "#131313",
+            "error-dim": "#d53d18",
+            "on-background": "#ffffff",
+            "secondary-dim": "#156aff",
+            "on-tertiary-fixed-variant": "#760037",
+            "secondary-fixed-dim": "#afc2ff",
+            "surface-container": "#1a1a1a",
+            "tertiary": "#ff6b9b",
+            "surface-container-high": "#20201f",
+            "outline": "#767575",
+            "on-tertiary-container": "#000000",
+            "on-secondary-fixed-variant": "#0048b9",
+            "inverse-on-surface": "#565555",
+            "on-error-container": "#ffd2c8",
+            "secondary-container": "#0054d6",
+            "primary-fixed": "#cafd00",
+            "on-primary-fixed-variant": "#526900",
+            "surface-container-lowest": "#000000",
+            "on-error": "#450900",
+            "primary-container": "#cafd00",
+            "on-secondary-container": "#f8f7ff",
+            "primary": "#f3ffca",
+            "surface-bright": "#2c2c2c",
+            "background": "#0e0e0e",
+            "on-primary": "#516700"
+          },
+          fontFamily: {
+            "headline": ["Epilogue"],
+            "body": ["Plus Jakarta Sans"],
+            "label": ["Space Grotesk"]
+          },
+          borderRadius: { "DEFAULT": "0rem", "lg": "0rem", "xl": "0rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <link href="style.css" rel="stylesheet" />
+</head>
+
+<body
+  class="bg-surface text-on-surface font-body zine-grain selection:bg-primary-container selection:text-on-primary-container">
+  <!-- TopAppBar -->
+  <header
+    class="flex justify-between items-center w-full px-6 py-4 z-50 fixed top-0 bg-[#0e0e0e] border-b-2 border-[#CCFF00] shadow-[4px_4px_0px_0px_rgba(204,255,0,1)]">
+    <div class="flex items-center gap-4">
+      <span
+        class="text-3xl font-black text-[#CCFF00] italic font-bold font-display uppercase tracking-tight">Dorm</span>
+    </div>
+    <div class="flex items-center gap-6">
+      <div class="hidden md:flex items-center bg-surface-lowest border-2 border-outline px-3 py-1">
+        <span class="material-symbols-outlined text-primary-container text-sm mr-2">search</span>
+        <input class="bg-transparent border-none focus:ring-0 text-xs font-label uppercase text-on-surface-variant w-48"
+          placeholder="SEARCH Speak Up..." type="text" />
+      </div>
+      <div class="flex gap-4">
+        <span class="material-symbols-outlined text-white hover:text-primary-accent cursor-pointer">notifications</span>
+        <span
+          class="material-symbols-outlined text-white hover:text-primary-accent cursor-pointer">account_circle</span>
+      </div>
+    </div>
+  </header>
+  <!-- SideNavBar (Desktop) -->
+  <aside
+    class="hidden lg:flex flex-col h-screen fixed left-0 top-0 pt-20 pb-10 w-64 bg-[#131313] border-r-4 border-black z-40">
+    <nav class="flex flex-col gap-1 px-2">
+      <a class="nav-item text-white px-4 py-3 flex items-center gap-3" href="index.html">
+        <span class="material-symbols-outlined">home</span>
+        <span class="font-display font-bold text-lg">Speak Up</span>
+      </a>
+      <a class="nav-item text-white px-4 py-3 flex items-center gap-3" href="rant.html">
+        <span class="material-symbols-outlined">campaign</span>
+        <span class="font-display font-bold text-lg">Rant & Vent</span>
+      </a>
+      <a class="nav-item active bg-[#CCFF00] text-black font-black italic px-4 py-3 border-2 border-black flex items-center gap-3"
+        href="stories.html">
+        <span class="material-symbols-outlined">auto_stories</span>
+        <span class="font-display font-bold text-lg">Real Talk Stories</span>
+      </a>
+      <a class="nav-item text-white px-4 py-3 flex items-center gap-3" href="news.html">
+        <span class="material-symbols-outlined">newspaper</span>
+        <span class="font-display font-bold text-lg">Campus News</span>
+      </a>
+    </nav>
+    <div class="mt-auto px-4">
+      <button class="btn btn-primary w-full text-center trigger-speakout hover:bg-white hover:text-black">
+        SPEAK OUT
+      </button>
+    </div>
+  </aside>
+  <!-- Main Content -->
+  <main class="lg:ml-64 pt-24 pb-24 px-4 md:px-12 max-w-7xl mx-auto">
+    <!-- Featured Story Hero -->
+    <section class="relative group mb-20">
+      <div
+        class="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden border-4 border-black neo-shadow-black">
+        <img alt="Student desk with papers and laptop"
+          class="w-full h-full object-cover grayscale contrast-125 opacity-80 group-hover:scale-105 transition-transform duration-700"
+          data-alt="Grainy black and white photo of a student study space with books and a laptop"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBu72ciYKGAUyM-IJ4xew02r6riBSj61gcVQclf1yAg7J_02jDDqqHhU2crBIyq_Plpp7ZcafLn2R6JeUVuC440MsB83nnBP6eH8XyNT4-W4Z6MN-EVx5NvGCS4mNtTEPxA5kaP3X24ijYnd7v_OsWgQ3-6_q5B_jJeWfs7_0lX1zSo8O8cCU3ng-xNHqymEs7ayy8PZX12jTSdOUp88qNPLG4ARASkAeYf6FSpCR6BAH0P7lzUN5ashYNwFq0rYWofroZ5ErgT_Trc" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 p-6 md:p-12 w-full md:w-3/4">
+          <span
+            class="inline-block bg-tertiary text-on-tertiary-container font-['Space_Grotesk'] font-bold text-xs uppercase px-3 py-1 mb-4 -rotate-1 border-2 border-black">
+            Featured Essay
+          </span>
+          <h1
+            class="text-4xl md:text-7xl font-['Epilogue'] font-black text-white italic leading-none uppercase tracking-tighter mb-6">
+            The 2AM Mental Breakdown: Why No One Talks About Placement Anxiety.
+          </h1>
+          <div class="flex items-center gap-4 font-['Space_Grotesk'] text-white/80 uppercase text-sm">
+            <span>By Alex Chen</span>
+            <span class="w-2 h-2 bg-[#CCFF00]"></span>
+            <span>12 Min Read</span>
+          </div>
+        </div>
+      </div>
+      <!-- Sticker Callout -->
+      <div
+        class="absolute -top-6 -right-4 hidden md:block rotate-12 bg-[#CCFF00] text-black border-2 border-black p-4 neo-shadow-black max-w-[200px]">
+        <p class="font-['Space_Grotesk'] font-black text-xs uppercase leading-tight">"I felt like a failure before I
+          even started."</p>
+      </div>
+    </section>
+    <!-- Magazine Grid Section -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <!-- Feed: The Stories -->
+      <div class="lg:col-span-8 space-y-16">
+        <h2
+          class="text-5xl font-['Epilogue'] font-black uppercase italic border-b-4 border-[#CCFF00] pb-2 inline-block">
+          Real Talk Feed</h2>
+        <!-- Story Card 1 -->
+        <article class="group cursor-pointer">
+          <div class="flex flex-col md:flex-row gap-8">
+            <div class="w-full md:w-1/3 aspect-square border-4 border-black overflow-hidden neo-shadow-black">
+              <img alt="Empty library corridor"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                data-alt="Monochrome photo of an empty university library corridor"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC4gCy2YSBjn034L9qTJVTknSjpsB9zpqSn2Gtli6EPKoEbjBh6DS33brRTMo5F9GNxUjwF_5ggvC4UmU9LO3xajNOfVDZJAv17T_fvlPpCATzmyv-uaeSIJjcj8EtvVbOxAp0WgBw0xwYrWUtaFtlersEpBi-j1KN_0YaT_Bit93jA1Nw0oPGb2MNHEB6rMHHQ6pmH9LYXPTY6VILi9ZzxtuAthK5xc0oKCxvq4w4IqRtQwkdXyeu0xX159qpfJbEqnopXLILiiKd" />
+            </div>
+            <div class="w-full md:w-2/3 flex flex-col justify-center">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="font-['Space_Grotesk'] text-tertiary text-xs font-bold uppercase tracking-widest">Mental
+                  Health</span>
+                <span class="text-white/30">•</span>
+                <span class="font-['Space_Grotesk'] text-white/50 text-xs font-bold uppercase">5 min read</span>
+              </div>
+              <h3
+                class="text-3xl font-['Epilogue'] font-black text-white group-hover:text-[#CCFF00] transition-colors leading-tight mb-4">
+                Imposter Syndrome and the First-Gen Student Paradox.
+              </h3>
+              <p class="text-on-surface-variant font-body line-clamp-2 mb-4 italic">
+                "My parents came here with nothing so I could have everything, but sometimes it feels like I'm wearing a
+                mask I can't take off."
+              </p>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-surface-container-high border-2 border-black overflow-hidden">
+                  <img alt="Author" data-alt="Stylized avatar of a student author"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKVNWP0_64WAMK1C7VjzWhza1xNq7uWs2lH31LzWStDkngPXs-7hmaDYf0uyFEK2YgG2jRyJia6c8d3ugJ0N44-nod84q-OYjdYd1ftje1kRBkDVZI_zlhVPiK6aPVQILdw-Nk9_rDcmCqD386PVfFdSVBuQySsNVMQxoNpi2VFnB2bl5TT9oIrmjj20LhtuvVL_4CHPJLQnoyNbXgh4cFhg5p49mVUYSxKJQfz_zDPPXK6hZQffCjPwzKI_HaAkSI_dQesqxopg7C" />
+                </div>
+                <span class="font-['Space_Grotesk'] text-xs uppercase font-bold text-white">Maya Rodriguez</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- Story Card 2 -->
+        <article class="group cursor-pointer">
+          <div class="flex flex-col md:flex-row gap-8">
+            <div
+              class="w-full md:w-1/3 aspect-square border-4 border-black overflow-hidden neo-shadow-black md:order-last">
+              <img alt="Students hanging out"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                data-alt="Grainy high-contrast photo of students sitting on a dormitory floor"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsCLxC8MiqTjuzjxUvQoK30_Zu1pRVN3KXM9lE-ayn-1NfIN2CCs9ZA5SfJn1W71glZEc7feEZqrqsj10lQs7T5hjt-mGXa-Bnw5YHlgG-OteIFcJ1oe7QcnSwDIYT3mLd8F7C-MwtfFB7rw6t-J-0APDhLt96UwBUUBcWDb4m0w1cty9knjopSnMohKelPSe2MzCp-lLNt5lyVa4PmTHcBUic0kkM4hIQqw8P7_sQafULtlqeBmDoou8PKiVg5slpAq88jIchiCuJ" />
+            </div>
+            <div class="w-full md:w-2/3 flex flex-col justify-center">
+              <div class="flex items-center gap-2 mb-2">
+                <span
+                  class="font-['Space_Grotesk'] text-secondary text-xs font-bold uppercase tracking-widest">Community</span>
+                <span class="text-white/30">•</span>
+                <span class="font-['Space_Grotesk'] text-white/50 text-xs font-bold uppercase">8 min read</span>
+              </div>
+              <h3
+                class="text-3xl font-['Epilogue'] font-black text-white group-hover:text-[#CCFF00] transition-colors leading-tight mb-4">
+                Beyond the Group Chat: Finding Real Connection in a Digital Dorm.
+              </h3>
+              <p class="text-on-surface-variant font-body line-clamp-2 mb-4 italic">
+                We have 500 friends on social media, but who do you call when the heating breaks and you're failing Calc
+                2?
+              </p>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-surface-container-high border-2 border-black overflow-hidden">
+                  <img alt="Author" data-alt="Stylized avatar of a male student author"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC37MlsnPQbio8OdHk8-D6mVLXnJnizcWEoG8YEjT5OsWf-pm3_SPIk1y6KH3GESbjVWmV2ULnNMqE01gCQY5wAwviEE3DSjYgZqeghk7bagQ1XkNIaUIrpLXo2ZhD_4McJsixck20iryKl8c9Mf_25qI6wGYPpihWWYHSYTUj6vmJ7Sced_0y2rqvbeM5ljukY1Z3PEZIcVCyxxKkLAXX3IOkL2GRizM81AckYcuoPnC_DQ8Ni_hHzHVQ31Z2EtFrGhIhE1Xo2TvhA" />
+                </div>
+                <span class="font-['Space_Grotesk'] text-xs uppercase font-bold text-white">Samual Okafor</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- Story Card 3 -->
+        <article class="group cursor-pointer">
+          <div class="flex flex-col md:flex-row gap-8">
+            <div class="w-full md:w-1/3 aspect-square border-4 border-black overflow-hidden neo-shadow-black">
+              <img alt="Cup of coffee on a desk"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                data-alt="Overhead shot of a coffee cup and scattered notebook pages"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAN1aDuOxkrj2TA5xQsI9Tjyo3TRtO66jALTTJXqgBb9MAGYsgbisLpvkQATP8pOgnqONMJliHPsxigFKFRaWt2KwuuMap64W2dQJhVzF6rz7AC3cHJ9Dfso7w6wK-i4cGsfNkvCQzVU2595kQJMKjvsyym9QPeqGxOo4HzezTG8PqZkC-QN1LLmUGSfUAw4oNp4sjstrNgItea4c7z6EhyQIMucDW51wnUkysnSOGfpPgCo1JqHTVoxc2c_CkFMi-vWL3jYF2Vobft" />
+            </div>
+            <div class="w-full md:w-2/3 flex flex-col justify-center">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="font-['Space_Grotesk'] text-tertiary text-xs font-bold uppercase tracking-widest">Self
+                  Care</span>
+                <span class="text-white/30">•</span>
+                <span class="font-['Space_Grotesk'] text-white/50 text-xs font-bold uppercase">4 min read</span>
+              </div>
+              <h3
+                class="text-3xl font-['Epilogue'] font-black text-white group-hover:text-[#CCFF00] transition-colors leading-tight mb-4">
+                Why I Decided to Retake the Semester.
+              </h3>
+              <p class="text-on-surface-variant font-body line-clamp-2 mb-4 italic">
+                It wasn't about the grades anymore. It was about choosing to breathe before I completely broke.
+              </p>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-surface-container-high border-2 border-black overflow-hidden">
+                  <img alt="Author" data-alt="Stylized avatar of a female student author"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJaoNZ2BLGaEEH5Cu0QU3xYhpRNSOl066W2ibw0zwlKutpw3yuGX20bFGeTfOtts25Zya_xI4E_extWA5oMnrZEcn55Cjsw7SH348s2QgA1uystDMR4HuIOFqb9RTdqTqpl9bDxYVPBuerJ9pwDKaWWxqkTveNA7k2a94TV7UnGX8K1H5PPv7Ryy2CYkcJw5hTdh02MnD2lxQZ9CeIAinnyeIafgTuUkAYuYsa_LICJZGS2f2Sg1ds9NCZes7vAChPUMFEUiR4QNZQ" />
+                </div>
+                <span class="font-['Space_Grotesk'] text-xs uppercase font-bold text-white">Lisa K.</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+      <!-- Sidebar / Interaction -->
+      <aside class="lg:col-span-4 space-y-8">
+        <!-- Submit Your Own Story -->
+        <div class="bg-surface-container-high border-4 border-black p-8 neo-shadow">
+          <h4 class="text-2xl font-['Epilogue'] font-black uppercase italic mb-4">Speak Your Truth</h4>
+          <p class="font-body text-sm mb-6 text-on-surface-variant">
+            Our stories are our power. Shared experiences make the dorm feel a little smaller, and the pressure a little
+            lighter. Submit your personal essay anonymously or with credit.
+          </p>
+          <button
+            class="w-full bg-[#CCFF00] text-black font-['Epilogue'] font-black uppercase py-4 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+            Submit A Story
+          </button>
+        </div>
+        <!-- Trending Sticker Wall -->
+        <div class="space-y-4">
+          <h4 class="font-['Space_Grotesk'] font-bold text-xs uppercase tracking-[0.2em] text-white/50">Recent Small
+            Wins</h4>
+          <div class="flex flex-wrap gap-3">
+            <div
+              class="bg-secondary-container text-white border-2 border-black px-4 py-2 rotate-2 neo-shadow-black font-['Space_Grotesk'] font-bold text-xs">
+              Applied for first job!
+            </div>
+            <div
+              class="bg-tertiary text-on-tertiary-container border-2 border-black px-4 py-2 -rotate-3 neo-shadow-black font-['Space_Grotesk'] font-bold text-xs">
+              8 hours of sleep.
+            </div>
+            <div
+              class="bg-primary-container text-black border-2 border-black px-4 py-2 rotate-1 neo-shadow-black font-['Space_Grotesk'] font-bold text-xs">
+              Handed in the essay early.
+            </div>
+          </div>
+        </div>
+        <!-- Featured Quote -->
+        <div class="relative py-12 px-6 border-l-4 border-[#CCFF00]">
+          <span
+            class="material-symbols-outlined text-5xl text-[#CCFF00] absolute -top-4 -left-6 bg-surface">format_quote</span>
+          <p class="text-xl font-['Epilogue'] italic font-bold text-white">
+            "Real Talk isn't about the highlight reel. It's about the behind-the-scenes—the mess, the grit, and the
+            growth that happens in the dark."
+          </p>
+          <cite class="block mt-4 font-['Space_Grotesk'] text-sm uppercase text-[#CCFF00]">— Dorm Editorial Board</cite>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <!-- BottomNavBar (Mobile) -->
+  <nav
+    class="lg:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-4 pt-2 bg-[#0e0e0e] z-50 border-t-4 border-black shadow-[0_-4px_0px_0px_rgba(204,255,0,0.5)]">
+    <a class="flex flex-col items-center justify-center text-white p-2" href="index.html">
+      <span class="material-symbols-outlined">grid_view</span>
+      <span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold">Home</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-white p-2" href="rant.html">
+      <span class="material-symbols-outlined">add_box</span>
+      <span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold">Post</span>
+    </a>
+    <a class="flex flex-col items-center justify-center bg-[#CCFF00] text-black rounded-none p-2 border-2 border-black -translate-y-2 active:scale-95 duration-75"
+      href="#">
+      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+      <span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold">Stories</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-white p-2" href="#">
+      <span class="material-symbols-outlined">person</span>
+      <span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold">Profile</span>
+    </a>
+  </nav>
+  <!-- Footer -->
+  <footer
+    class="w-full py-12 px-6 flex flex-col md:flex-row justify-between items-center gap-8 bg-[#000000] border-t-2 border-[#CCFF00] mt-auto">
+    <div class="text-[#CCFF00] font-['Epilogue'] font-black uppercase text-xl italic tracking-widest">Dorm.</div>
+    <div class="flex flex-wrap justify-center gap-8 font-['Space_Grotesk'] text-xs uppercase">
+      <a class="text-gray-500 hover:text-white transition-colors" href="#">Guidelines</a>
+      <a class="text-gray-500 hover:text-white transition-colors" href="#">Privacy</a>
+      <a class="text-gray-500 hover:text-white transition-colors" href="#">Community Rules</a>
+    </div>
+    <div class="font-['Space_Grotesk'] text-xs uppercase text-white/40">
+      © Dorm. The Digital Zine.
+    </div>
+  </footer>
+  
+  <!-- Speak Out Modal -->
+  <div id="speakout-modal" class="fixed inset-0 z-[200] hidden flex items-center justify-center px-4 transition-opacity duration-200 opacity-0 backdrop-blur-md bg-black/60">
+    <div class="bg-[#131313] border-4 border-black w-full max-w-2xl shadow-[12px_12px_0px_0px_#000000] p-6 relative flex flex-col gap-6">
+      
+      <!-- Close Button -->
+      <button id="close-modal" class="absolute -top-4 -right-4 bg-error text-white font-black w-10 h-10 border-2 border-black flex items-center justify-center hover:scale-110 active:scale-95 transition-all text-xl sticker-rotate-2">X</button>
+      
+      <!-- Headline & Type Selector -->
+      <div class="flex flex-col gap-4 border-b-4 border-black pb-4">
+        <h2 class="font-headline font-black text-3xl md:text-3xl uppercase tracking-tighter text-[#CCFF00]">What's on your mind?</h2>
+        <div class="flex flex-wrap gap-2">
+          <button data-type="rant" class="type-btn font-label text-xs uppercase font-bold py-2 px-4 border-2 border-black bg-[#CCFF00] text-black">Rant & Vent</button>
+          <button data-type="news" class="type-btn font-label text-xs uppercase font-bold py-2 px-4 border-2 border-white bg-transparent text-white hover:bg-white hover:text-black transition-colors">Campus News</button>
+          <button data-type="win" class="type-btn font-label text-xs uppercase font-bold py-2 px-4 border-2 border-white bg-transparent text-white hover:bg-white hover:text-black transition-colors">Small Win</button>
+          <button data-type="poll" class="type-btn font-label text-xs uppercase font-bold py-2 px-4 border-2 border-white bg-transparent text-white hover:bg-white hover:text-black transition-colors">Poll</button>
+        </div>
+      </div>
+
+      <!-- Main Input -->
+      <div class="flex flex-col gap-4">
+        <input type="text" placeholder="Title/Topic..." class="w-full bg-transparent border-none border-b-4 border-outline focus:border-[#CCFF00] focus:ring-0 text-white font-headline font-bold text-2xl placeholder-outline outline-none py-2" />
+        <textarea rows="4" placeholder="Write your post here... Tell them how it really is." class="w-full bg-white text-black p-4 border-2 border-outline focus:border-[#CCFF00] focus:ring-0 font-body resize-none outline-none"></textarea>
+      </div>
+
+      <!-- Tag Selector (For Rants) -->
+      <div id="tag-selector-container" class="flex flex-col gap-2">
+        <span class="font-label text-xs uppercase font-bold text-[#CCFF00]">Tag your Rant:</span>
+        <div class="flex flex-wrap gap-2" id="tag-selector-options">
+          <button data-tag="Admin" class="tag-opt-btn px-4 py-1 border-2 border-white bg-white text-black font-label font-bold uppercase text-xs hover:bg-[#CCFF00] hover:text-black hover:border-black transition-colors">Admin</button>
+          <button data-tag="Professors" class="tag-opt-btn px-4 py-1 border-2 border-white bg-transparent text-white font-label font-bold uppercase text-xs hover:bg-white hover:text-black transition-colors">Professors</button>
+          <button data-tag="Hostel Life" class="tag-opt-btn px-4 py-1 border-2 border-white bg-transparent text-white font-label font-bold uppercase text-xs hover:bg-white hover:text-black transition-colors">Hostel Life</button>
+          <button data-tag="Peer Pressure" class="tag-opt-btn px-4 py-1 border-2 border-white bg-transparent text-white font-label font-bold uppercase text-xs hover:bg-white hover:text-black transition-colors">Peer Pressure</button>
+        </div>
+      </div>
+
+      <!-- Poll Container (Hidden by default) -->
+      <div id="poll-container" class="hidden flex-col gap-3 p-4 bg-surface-container border-2 border-outline relative">
+        <div class="absolute -top-3 -left-3 bg-[#CCFF00] text-black font-label font-bold text-[10px] px-2 py-0.5 border-2 border-black uppercase sticker-rotate-1">POLL BUILDER</div>
+        <div id="poll-options" class="flex flex-col gap-2 mt-2">
+          <input type="text" placeholder="Option A..." class="w-full bg-white text-black p-3 border-2 border-outline focus:border-[#CCFF00] focus:ring-0 font-label outline-none" />
+          <input type="text" placeholder="Option B..." class="w-full bg-white text-black p-3 border-2 border-outline focus:border-[#CCFF00] focus:ring-0 font-label outline-none" />
+        </div>
+        <button id="add-option-btn" class="font-label text-xs uppercase font-bold flex items-center justify-center py-3 border-2 border-dashed border-outline text-outline hover:text-white hover:border-white transition-colors gap-2 mt-2">
+          <span class="material-symbols-outlined text-sm">add</span> Add Option
+        </button>
+      </div>
+
+      <!-- Action Footer -->
+      <div class="flex justify-end gap-4 mt-2">
+        <button onclick="document.getElementById('close-modal').click()" class="font-label text-xs uppercase font-bold bg-transparent border-2 border-white text-white px-2 md:px-6 py-3 hover:bg-white hover:text-black transition-colors">Cancel</button>
+        <button class="font-label text-xs uppercase font-bold bg-[#CCFF00] border-2 border-black text-black px-4 md:px-8 py-3 shadow-[4px_4px_0px_0px_#000000] hover:translate-x-1 hover:translate-y-1 hover:shadow-[2px_2px_0px_0px_#000000] transition-all">POST RECORD</button>
+      </div>
+    </div>
+  </div>
+  <script src="modal.js"></script>
+</body>
+
+</html>

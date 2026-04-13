@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Dorm | Campus News</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;900&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-dim": "#beee00",
+            "on-secondary": "#001c53",
+            "on-surface": "#ffffff",
+            "error-container": "#b92902",
+            "on-tertiary": "#47001f",
+            "on-surface-variant": "#adaaaa",
+            "surface-container-highest": "#262626",
+            "surface-dim": "#0e0e0e",
+            "error": "#ff7351",
+            "tertiary-container": "#ff067f",
+            "outline-variant": "#484847",
+            "secondary": "#759aff",
+            "secondary-fixed": "#c3d0ff",
+            "surface-variant": "#262626",
+            "surface": "#0e0e0e",
+            "inverse-surface": "#fcf9f8",
+            "primary-fixed-dim": "#beee00",
+            "inverse-primary": "#516700",
+            "tertiary-fixed": "#ff8eae",
+            "surface-tint": "#f3ffca",
+            "on-primary-fixed": "#3a4a00",
+            "on-tertiary-fixed": "#380017",
+            "tertiary-dim": "#e30071",
+            "on-secondary-fixed": "#002e7d",
+            "on-primary-container": "#4a5e00",
+            "tertiary-fixed-dim": "#ff75a0",
+            "surface-container-low": "#131313",
+            "error-dim": "#d53d18",
+            "on-background": "#ffffff",
+            "secondary-dim": "#156aff",
+            "on-tertiary-fixed-variant": "#760037",
+            "secondary-fixed-dim": "#afc2ff",
+            "surface-container": "#1a1a1a",
+            "tertiary": "#ff6b9b",
+            "surface-container-high": "#20201f",
+            "outline": "#767575",
+            "on-tertiary-container": "#000000",
+            "on-secondary-fixed-variant": "#0048b9",
+            "inverse-on-surface": "#565555",
+            "on-error-container": "#ffd2c8",
+            "secondary-container": "#0054d6",
+            "primary-fixed": "#cafd00",
+            "on-primary-fixed-variant": "#526900",
+            "surface-container-lowest": "#000000",
+            "on-error": "#450900",
+            "primary-container": "#cafd00",
+            "on-secondary-container": "#f8f7ff",
+            "primary": "#f3ffca",
+            "surface-bright": "#2c2c2c",
+            "background": "#0e0e0e",
+            "on-primary": "#516700"
+          },
+          fontFamily: {
+            "headline": ["Epilogue"],
+            "body": ["Plus Jakarta Sans"],
+            "label": ["Space Grotesk"]
+          },
+          borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <link href="style.css" rel="stylesheet" />
+</head>
+
+<body class="bg-surface text-on-surface font-body overflow-x-hidden">
+  <!-- TopAppBar -->
+  <header
+    class="flex justify-between items-center w-full px-6 py-4 z-50 fixed top-0 bg-[#0e0e0e] border-b-2 border-[#CCFF00] shadow-[4px_4px_0px_0px_rgba(204,255,0,1)]">
+    <div class="flex items-center gap-4">
+      <span
+        class="text-3xl font-black text-[#CCFF00] italic font-bold font-display uppercase tracking-tight">Dorm</span>
+    </div>
+    <div class="flex items-center gap-6">
+      <div class="hidden md:flex items-center bg-surface-lowest border-2 border-outline px-3 py-1">
+        <span class="material-symbols-outlined text-primary-container text-sm mr-2">search</span>
+        <input class="bg-transparent border-none focus:ring-0 text-xs font-label uppercase text-on-surface-variant w-48"
+          placeholder="SEARCH Speak Up..." type="text" />
+      </div>
+      <div class="flex gap-4">
+        <span class="material-symbols-outlined text-white hover:text-primary-accent cursor-pointer">notifications</span>
+        <span
+          class="material-symbols-outlined text-white hover:text-primary-accent cursor-pointer">account_circle</span>
+      </div>
+    </div>
+  </header>
+  <!-- SideNavBar (Desktop) -->
+  <aside
+    class="hidden lg:flex flex-col h-screen fixed left-0 top-0 pt-20 pb-10 w-64 bg-[#131313] border-r-4 border-black z-40">
+    <nav class="flex flex-col gap-1 px-2">
+      <a class="nav-item text-white px-4 py-3 flex items-center gap-3" href="index.html">
+        <span class="material-symbols-outlined">home</span>
+        <span class="font-display font-bold text-lg">Speak Up</span>
+      </a>
+      <a class="nav-item text-white px-4 py-3 flex items-center gap-3" href="rant.html">
+        <span class="material-symbols-outlined">campaign</span>
+        <span class="font-display font-bold text-lg">Rant & Vent</span>
+      </a>
+      <a class="nav-item text-white px-4 py-3 flex items-center gap-3" href="stories.html">
+        <span class="material-symbols-outlined">auto_stories</span>
+        <span class="font-display font-bold text-lg">Real Talk Stories</span>
+      </a>
+      <a class="nav-item active bg-[#CCFF00] text-black font-black italic px-4 py-3 border-2 border-black flex items-center gap-3"
+        href="news.html">
+        <span class="material-symbols-outlined">newspaper</span>
+        <span class="font-display font-bold text-lg">Campus News</span>
+      </a>
+    </nav>
+    <div class="mt-auto px-4">
+      <button class="btn btn-primary w-full text-center trigger-speakout hover:bg-white hover:text-black">
+        SPEAK OUT
+      </button>
+    </div>
+  </aside>
+  <!-- Main Content Area -->
+  <main class="flex-grow lg:ml-64 min-h-screen bg-surface pb-24 md:pb-12">
+    <!-- Breaking News Ticker Banner -->
+    <div class="w-full bg-primary-container py-2 border-y-4 border-black overflow-hidden whitespace-nowrap z-30">
+      <div class="inline-block animate-marquee font-label font-black text-black uppercase text-sm tracking-tighter">
+        <span class="mx-4 italic">BREAKING: LIBRARY TO CLOSE AT 8PM FOR "MAINTENANCE" (RUMORED PARTY) //</span>
+        <span class="mx-4 italic">PLACEMENT CELL LEAKS REVEAL 40% DROP IN TECH OFFERS //</span>
+        <span class="mx-4 italic">PROTEST AT MAIN GATE TONIGHT //</span>
+        <span class="mx-4 italic">BREAKING: LIBRARY TO CLOSE AT 8PM FOR "MAINTENANCE" (RUMORED PARTY) //</span>
+      </div>
+    </div>
+    <!-- Content Header -->
+    <section class="px-6 pt-10 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div>
+        <h1 class="font-headline text-6xl md:text-8xl font-black uppercase leading-none tracking-tighter italic">
+          Campus<br /><span class="text-stroke-primary">News</span></h1>
+        <p class="font-label text-primary-dim uppercase mt-4 tracking-widest text-sm">Leaked. Unfiltered. Student-Owned.
+        </p>
+      </div>
+      <div class="flex gap-4">
+        <button
+          class="bg-surface-container-highest border-2 border-outline px-4 py-2 font-label text-xs uppercase hover:bg-surface-bright transition-colors">Submit
+          a Leak</button>
+        <button
+          class="bg-tertiary border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] px-4 py-2 font-label text-xs uppercase text-on-tertiary-container font-bold">The
+          Archive</button>
+      </div>
+    </section>
+    <!-- Grid Content -->
+    <div class="px-6 grid grid-cols-1 md:grid-cols-12 gap-6">
+      <!-- Hero Featured Article (The Unfiltered) -->
+      <article class="md:col-span-8 bg-surface-container-low border-2 border-outline relative group cursor-pointer">
+        <div class="h-[400px] w-full overflow-hidden bg-surface-container relative">
+          <img class="w-full h-full object-cover grayscale contrast-125 mix-blend-multiply opacity-80"
+            data-alt="Grainy black and white photo of a student protest in the dark"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeNmRQXyrO0axE1jItzxZphZsu15Eo6JP5Zyo74I7Ke3WSVKXLnGbu_4rSpL1rvLJRjFQtUdaVk8SDVqFMg9PaiL5u8BWrAwN5qaY2ZFLaP7KjbDHSHtaVe75mGvUtX5sDv4BwkcehoIei4dns5X6Am2ly93wRJN0nKA3bbRKuiIjURj7lQD35W9XLJfv5LW3TlF1URNhzNX7K1yzZRq4aBgRwiuL_xEI1N11URCscyTXTHJllc1pQX-n31D_dZyoeYmE1PnBNzzgF" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+          <div
+            class="absolute top-4 left-4 bg-tertiary text-on-tertiary-container px-3 py-1 font-label text-xs uppercase font-bold transform -rotate-2">
+            The Unfiltered</div>
+        </div>
+        <div class="p-6">
+          <h2
+            class="font-headline text-3xl md:text-5xl font-black uppercase mb-4 leading-tight group-hover:text-primary-dim transition-colors">
+            What happened at last night's protest?</h2>
+          <p class="font-body text-on-surface-variant text-lg max-w-2xl mb-6">Security cam footage and eye-witness
+            accounts show a different story than the Dean's email. We have the logs.</p>
+          <div class="flex items-center justify-between border-t border-outline-variant pt-4">
+            <div class="flex items-center gap-3">
+              <span class="font-label text-xs text-outline uppercase tracking-wider">3h ago by @GhostAdmin</span>
+              <div class="flex gap-1">
+                <span class="bg-secondary text-white text-[10px] px-2 py-0.5 font-label uppercase">Verified 142x</span>
+              </div>
+            </div>
+            <button
+              class="flex items-center gap-2 bg-primary-fixed text-on-primary-container px-4 py-2 border-2 border-black font-label text-xs uppercase font-black shadow-[3px_3px_0px_0px_rgba(255,107,155,1)]">
+              <span class="material-symbols-outlined text-sm">check_circle</span> Verify This
+            </button>
+          </div>
+        </div>
+      </article>
+      <!-- Sidebar Content (Campus Politics) -->
+      <div class="md:col-span-4 flex flex-col gap-6">
+        <div class="bg-surface-container-high border-2 border-outline p-6 flex flex-col gap-4 relative">
+          <div
+            class="absolute -top-3 right-4 bg-secondary text-white px-3 py-1 font-label text-[10px] uppercase transform rotate-2">
+            Campus Politics</div>
+          <h3 class="font-headline text-xl font-black uppercase leading-tight italic">The real reason the placement cell
+            is quiet this year</h3>
+          <p class="font-body text-sm text-on-surface-variant">Confidential data leaked from the admin office shows a
+            massive funding redirection to the new 'Executive Lounge'.</p>
+          <button class="self-start text-primary-dim font-label text-xs uppercase border-b border-primary-dim">Read
+            Leak</button>
+        </div>
+        <div class="bg-[#1a1a1a] border-2 border-black p-6 shadow-[3px_3px_0px_0px_#CCFF00] relative">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="material-symbols-outlined text-tertiary">warning</span>
+            <span class="font-label text-xs uppercase text-tertiary font-bold tracking-widest">Small Win Alert</span>
+          </div>
+          <h3 class="font-headline text-lg font-black uppercase">Hostel 4 Wifi Restored by Students</h3>
+          <p class="font-body text-sm text-on-surface-variant mt-2">After 2 weeks of radio silence from IT, the student
+            coalition fixed the router themselves. Real engineering.</p>
+        </div>
+      </div>
+      <!-- Bento Row (Student Life Hacks & Breaking) -->
+      <div class="md:col-span-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <article
+          class="bg-surface-container border-2 border-outline p-6 group cursor-pointer flex flex-col justify-between">
+          <div>
+            <div class="bg-primary-fixed-dim text-black text-[10px] px-2 py-0.5 font-label uppercase inline-block mb-4">
+              Student Life Hacks</div>
+            <h4 class="font-headline text-2xl font-black uppercase leading-tight">Hidden gems: Where to eat when you're
+              broke.</h4>
+          </div>
+          <div class="mt-8 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-outline">timer</span>
+              <span class="font-label text-xs text-outline uppercase tracking-wider">5m Read</span>
+            </div>
+            <span
+              class="material-symbols-outlined text-primary-dim group-hover:translate-x-2 transition-transform">arrow_forward</span>
+          </div>
+        </article>
+        <article
+          class="bg-surface-container-lowest border-2 border-tertiary p-6 group cursor-pointer flex flex-col justify-between shadow-[4px_4px_0px_0px_rgba(255,107,155,0.3)]">
+          <div>
+            <div class="bg-tertiary text-on-tertiary text-[10px] px-2 py-0.5 font-label uppercase inline-block mb-4">
+              Breaking</div>
+            <h4 class="font-headline text-2xl font-black uppercase leading-tight">Library AC is officially dead. Again.
+            </h4>
+            <p class="font-body text-sm text-on-surface-variant mt-4">Exam season is here and the heat is unbearable.
+              Students are moving desks to the cafeteria. Join the move.</p>
+          </div>
+          <div class="mt-6">
+            <button
+              class="w-full bg-surface-container border border-outline py-2 font-label text-xs uppercase hover:bg-tertiary hover:text-on-tertiary transition-colors">Verify/Report
+              Heat</button>
+          </div>
+        </article>
+        <article class="bg-surface-container border-2 border-outline relative overflow-hidden group cursor-pointer">
+          <div class="h-32 bg-surface-container-highest flex items-center justify-center">
+            <img class="w-full h-full object-cover grayscale opacity-50 group-hover:opacity-100 transition-opacity"
+              data-alt="College campus with a red cross mark overlay"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCias84UuxmgxeY8pZIJE4fFZwGWrkw78bzYUld5NJtcYlCwa2jGoR5NRidW9w9i1WevsYMKCKMwGap9ka-EE_o1kfMglf0tPRIUoo50EYa9wupNqcypNp8Wn1LM7GXVTUN0e8J6OSIa44R4eQLptSv3xK23qgHsd1dJP8sHhOZoQvdTP6ypKwcUhujp6S9AaDCEgCL3r_Yxx0YowVHjiJJAWhHBqR43yMlB3tvgpYq-j-vG1CyejAaRope5zr8lJPGCS1Og8UCgx2N" />
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="font-headline text-5xl font-black uppercase text-error-dim rotate-12 opacity-80">STAY
+                OUT</span>
+            </div>
+          </div>
+          <div class="p-4">
+            <h4 class="font-headline text-xl font-black uppercase leading-tight italic">Construction at Block C is a
+              Safety Hazard</h4>
+            <p class="font-body text-xs text-on-surface-variant mt-2">Exposed wires and no safety nets. Administration
+              says it's "safe enough." We disagree.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer
+      class="bg-[#000000] text-[#CCFF00] font-['Space_Grotesk'] text-xs uppercase w-full border-t-2 border-[#CCFF00] mt-16">
+      <div class="w-full py-8 px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center gap-4">
+          <span class="text-[#CCFF00] font-bold text-xl">DORM.</span>
+          <p class="text-gray-500">© Dorm. The Digital Zine.</p>
+        </div>
+        <nav class="flex gap-6">
+          <a class="text-gray-500 hover:text-white transition-colors" href="#">Guidelines</a>
+          <a class="text-gray-500 hover:text-white transition-colors" href="#">Privacy</a>
+          <a class="text-gray-500 hover:text-white transition-colors" href="#">Community Rules</a>
+        </nav>
+      </div>
+    </footer>
+  </main>
+  </div>
+  <!-- BottomNavBar (Mobile Only) -->
+  <nav
+    class="lg:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-4 pt-2 bg-[#0e0e0e] border-t-4 border-black shadow-[0_-4px_0px_0px_rgba(204,255,0,0.5)] z-50">
+    <a class="flex flex-col items-center justify-center text-white p-2" href="index.html">
+      <span class="material-symbols-outlined">grid_view</span>
+      <span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold">Home</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-white p-2" href="rant.html">
+      <span class="material-symbols-outlined">add_box</span>
+      <span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold">Post</span>
+    </a>
+    <a class="flex flex-col items-center justify-center bg-[#CCFF00] text-black rounded-none p-2 border-2 border-black -translate-y-2 scale-95 duration-75"
+      href="#">
+      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">stars</span>
+      <span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold">Wins</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-white p-2" href="#">
+      <span class="material-symbols-outlined">person</span>
+      <span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold">Profile</span>
+    </a>
+  </nav>
+  <!-- FAB (Suppressed on Details/News but keeping for Home consistency if requested, hiding as per Shell Visibility Rules for sub-page intent) -->
+  
+  <!-- Speak Out Modal -->
+  <div id="speakout-modal" class="fixed inset-0 z-[200] hidden flex items-center justify-center px-4 transition-opacity duration-200 opacity-0 backdrop-blur-md bg-black/60">
+    <div class="bg-[#131313] border-4 border-black w-full max-w-2xl shadow-[12px_12px_0px_0px_#000000] p-6 relative flex flex-col gap-6">
+      
+      <!-- Close Button -->
+      <button id="close-modal" class="absolute -top-4 -right-4 bg-error text-white font-black w-10 h-10 border-2 border-black flex items-center justify-center hover:scale-110 active:scale-95 transition-all text-xl sticker-rotate-2">X</button>
+      
+      <!-- Headline & Type Selector -->
+      <div class="flex flex-col gap-4 border-b-4 border-black pb-4">
+        <h2 class="font-headline font-black text-3xl md:text-3xl uppercase tracking-tighter text-[#CCFF00]">What's on your mind?</h2>
+        <div class="flex flex-wrap gap-2">
+          <button data-type="rant" class="type-btn font-label text-xs uppercase font-bold py-2 px-4 border-2 border-black bg-[#CCFF00] text-black">Rant & Vent</button>
+          <button data-type="news" class="type-btn font-label text-xs uppercase font-bold py-2 px-4 border-2 border-white bg-transparent text-white hover:bg-white hover:text-black transition-colors">Campus News</button>
+          <button data-type="win" class="type-btn font-label text-xs uppercase font-bold py-2 px-4 border-2 border-white bg-transparent text-white hover:bg-white hover:text-black transition-colors">Small Win</button>
+          <button data-type="poll" class="type-btn font-label text-xs uppercase font-bold py-2 px-4 border-2 border-white bg-transparent text-white hover:bg-white hover:text-black transition-colors">Poll</button>
+        </div>
+      </div>
+
+      <!-- Main Input -->
+      <div class="flex flex-col gap-4">
+        <input type="text" placeholder="Title/Topic..." class="w-full bg-transparent border-none border-b-4 border-outline focus:border-[#CCFF00] focus:ring-0 text-white font-headline font-bold text-2xl placeholder-outline outline-none py-2" />
+        <textarea rows="4" placeholder="Write your post here... Tell them how it really is." class="w-full bg-white text-black p-4 border-2 border-outline focus:border-[#CCFF00] focus:ring-0 font-body resize-none outline-none"></textarea>
+      </div>
+
+      <!-- Tag Selector (For Rants) -->
+      <div id="tag-selector-container" class="flex flex-col gap-2">
+        <span class="font-label text-xs uppercase font-bold text-[#CCFF00]">Tag your Rant:</span>
+        <div class="flex flex-wrap gap-2" id="tag-selector-options">
+          <button data-tag="Admin" class="tag-opt-btn px-4 py-1 border-2 border-white bg-white text-black font-label font-bold uppercase text-xs hover:bg-[#CCFF00] hover:text-black hover:border-black transition-colors">Admin</button>
+          <button data-tag="Professors" class="tag-opt-btn px-4 py-1 border-2 border-white bg-transparent text-white font-label font-bold uppercase text-xs hover:bg-white hover:text-black transition-colors">Professors</button>
+          <button data-tag="Hostel Life" class="tag-opt-btn px-4 py-1 border-2 border-white bg-transparent text-white font-label font-bold uppercase text-xs hover:bg-white hover:text-black transition-colors">Hostel Life</button>
+          <button data-tag="Peer Pressure" class="tag-opt-btn px-4 py-1 border-2 border-white bg-transparent text-white font-label font-bold uppercase text-xs hover:bg-white hover:text-black transition-colors">Peer Pressure</button>
+        </div>
+      </div>
+
+      <!-- Poll Container (Hidden by default) -->
+      <div id="poll-container" class="hidden flex-col gap-3 p-4 bg-surface-container border-2 border-outline relative">
+        <div class="absolute -top-3 -left-3 bg-[#CCFF00] text-black font-label font-bold text-[10px] px-2 py-0.5 border-2 border-black uppercase sticker-rotate-1">POLL BUILDER</div>
+        <div id="poll-options" class="flex flex-col gap-2 mt-2">
+          <input type="text" placeholder="Option A..." class="w-full bg-white text-black p-3 border-2 border-outline focus:border-[#CCFF00] focus:ring-0 font-label outline-none" />
+          <input type="text" placeholder="Option B..." class="w-full bg-white text-black p-3 border-2 border-outline focus:border-[#CCFF00] focus:ring-0 font-label outline-none" />
+        </div>
+        <button id="add-option-btn" class="font-label text-xs uppercase font-bold flex items-center justify-center py-3 border-2 border-dashed border-outline text-outline hover:text-white hover:border-white transition-colors gap-2 mt-2">
+          <span class="material-symbols-outlined text-sm">add</span> Add Option
+        </button>
+      </div>
+
+      <!-- Action Footer -->
+      <div class="flex justify-end gap-4 mt-2">
+        <button onclick="document.getElementById('close-modal').click()" class="font-label text-xs uppercase font-bold bg-transparent border-2 border-white text-white px-2 md:px-6 py-3 hover:bg-white hover:text-black transition-colors">Cancel</button>
+        <button class="font-label text-xs uppercase font-bold bg-[#CCFF00] border-2 border-black text-black px-4 md:px-8 py-3 shadow-[4px_4px_0px_0px_#000000] hover:translate-x-1 hover:translate-y-1 hover:shadow-[2px_2px_0px_0px_#000000] transition-all">POST RECORD</button>
+      </div>
+    </div>
+  </div>
+  <script src="modal.js"></script>
+</body>
+
+</html>
